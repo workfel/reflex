@@ -1,0 +1,13 @@
+.circle{
+	width: 100px;
+	height: 100px;
+	background: red;
+	border-radius: 390px;
+}
+
+.circle-active{
+	width: 100px;
+	height: 100px;
+	background: black;
+	border-radius: 390px;
+}

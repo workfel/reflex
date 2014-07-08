@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr" ng-app="appSpeedTouch">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind-template="">Translator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+</head>
+
+<body>
+
+
+    <div ng-view></div>
+
+
+
+
+
+<div id="smaatoad" style="padding: 0px"></div>
+<script id="smaatoAdDisplay" language="javascript" type="text/javascript"
+src="http://soma.smaato.net/oapi/js/smaatoAdDisplay.js">
+</script>
+<script>
+(function() {
+var request = new SomaRequest();
+request.adSpaceID = 65837884;
+request.publisherID = 923877689;
+/*insert additional targeting data here */
+SomaTag.requestAd(request);
+})();
+</script>
+
+
+    <script src="js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script> -->
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/bootstrap/ui-bootstrap-tpls-0.10.0.min.js"></script>
+
+
+
+    <script src="js/app.js"></script>
+    <!-- <script src="js/underscore.js"></script> -->
+    <script src="js/controllers/controllers.js"></script>
+</body>
+
+</html>

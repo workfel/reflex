@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    {{points}} 
+    </div>
+</div>
+
+<div class="row">
+
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-repeat="item in circles">
+        <div class="circle{{item.active}}" ng-click="onTap(item)"></div>
+    </div>
+
+</div>
