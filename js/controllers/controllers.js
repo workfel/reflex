@@ -2,7 +2,7 @@ var speedTouchCtrl = angular.module('speedTouchCtrl', []);
 
 speedTouchCtrl.controller('MainCtrl', function($scope, $interval) {
 
-    $scope.delay = 1000;
+    $scope.delay = 3000;
     $scope.points = 0;
 
     $scope.circles = [{
