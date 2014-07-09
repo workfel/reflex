@@ -7,7 +7,7 @@ speedTouchCtrl.controller('MainCtrl', function($scope, $location) {
     };
 
 });
-speedTouchCtrl.controller('GameCtrl', function($scope, $interval,$location,$route) {
+speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $route) {
 
     $scope.delay = 3000;
     $scope.points = 0;
@@ -64,6 +64,20 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval,$location,$rout
     ];
 
     var stopInterval;
+    var intervalBeginGame;
+
+
+    $scope.beginGame = function() {
+        if (angular.isDefined(intervalBeginGame)) return;
+        var cpt = 0;
+        intervalBeginGame = $interval(function() {
+            cpt++;
+            if(cpt === 3){
+                
+            }
+        }, $scope.delay, 3);
+
+    };
 
     $scope.start = function() {
 
@@ -73,6 +87,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval,$location,$rout
             $scope.tickUpdate();
         }, $scope.delay);
     };
+
 
     $scope.start();
 
@@ -157,7 +172,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval,$location,$rout
         $route.reload();
     };
 
-    $scope.toMenu = function(){
+    $scope.toMenu = function() {
         $location.path('index');
     }
 
