@@ -29,13 +29,14 @@
 
 <div id="smaatoad" style="padding: 0px"></div>
 <script id="smaatoAdDisplay" language="javascript" type="text/javascript"
-src="http://soma.smaato.net/oapi/js/smaatoAdDisplay.js">
+src="http://soma.smaato.net/oapi/js/smaatoAdDisplayInApp.js">
 </script>
 <script>
 (function() {
 var request = new SomaRequest();
 request.adSpaceID = 65837884;
 request.publisherID = 923877689;
+request.autorefresh = 30;
 /*insert additional targeting data here */
 SomaTag.requestAd(request);
 })();

@@ -1,0 +1,23 @@
+<div class="game">
+<div class="row menu">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<div ng-show="restartShow" ng-click="again()" class="peter-river-flat-button">Recommencer</div>
+    </div>
+    <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 points">
+        {{points}}
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+		<div class="peter-river-flat-button" ng-click="toMenu()" >Menu</div>
+		
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-repeat="item in circles">
+        <div class="rect{{item.active}}" ng-click="onTap(item)"></div>
+    </div>
+
+</div>
+
+
+   
+</div>

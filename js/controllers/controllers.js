@@ -1,9 +1,18 @@
 var speedTouchCtrl = angular.module('speedTouchCtrl', []);
 
-speedTouchCtrl.controller('MainCtrl', function($scope, $interval) {
+speedTouchCtrl.controller('MainCtrl', function($scope, $location) {
+
+    $scope.goTo = function(path) {
+        $location.path('game');
+    };
+
+});
+speedTouchCtrl.controller('GameCtrl', function($scope, $interval,$location,$route) {
 
     $scope.delay = 3000;
     $scope.points = 0;
+
+    $scope.restartShow = true;
 
     $scope.circles = [{
             id: 1,
@@ -141,6 +150,15 @@ speedTouchCtrl.controller('MainCtrl', function($scope, $interval) {
         });
 
         return isAllActivated;
+    }
+
+    $scope.again = function() {
+        $location.path('game');
+        $route.reload();
+    };
+
+    $scope.toMenu = function(){
+        $location.path('index');
     }
 
     $scope.loose = function() {

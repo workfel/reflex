@@ -1,14 +1,23 @@
-<div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4">
-    {{points}} 
-    </div>
-</div>
-
-<div class="row">
-
-
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-repeat="item in circles">
-        <div class="circle{{item.active}}" ng-click="onTap(item)"></div>
+<div class="home">
+    <div class="header">
+        Speed touch Reflex
     </div>
 
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <div class='cool_btn1 green' ng-click="goTo('classic')">
+                <h1 class='top'>Classic <i>easy</i>
+                </h1>
+                <h2>Easy</h2>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6">
+            <div class='cool_btn1 teal' ng-click="goTo('other')">
+                <h1 class='top'>10k <i>Likes</i>
+                </h1>
+                <h2>U</h2>
+            </div>
+        </div>
+    </div>
 </div>
