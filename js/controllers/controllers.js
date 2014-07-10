@@ -160,8 +160,10 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
         if ($scope.points === 5 || $scope.points === 10 ||
             $scope.points === 20 || $scope.points === 50 ||
             $scope.points === 80 || $scope.points === 100 ||
-            $scope.points === 200 || $scope.points === 300 ||
-            $scope.points === 400 || $scope.points === 500 ||
+            $scope.points === 150 || $scope.points === 200 ||
+            $scope.points === 250 || $scope.points === 300 ||
+            $scope.points === 350 || $scope.points === 400 ||
+            $scope.points === 450 || $scope.points === 500 ||
             $scope.points === 600 || $scope.points === 700 ||
             $scope.points === 800 || $scope.points === 900 ||
             $scope.points === 1000 || $scope.points === 1100
