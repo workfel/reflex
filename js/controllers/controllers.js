@@ -9,11 +9,13 @@ speedTouchCtrl.controller('MainCtrl', function($scope, $location) {
 });
 speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $route) {
 
-    $scope.delay = 3000;
+    $scope.delay = 1500;
     $scope.points = 0;
 
     $scope.restartShow = true;
     $scope.isModal = true;
+
+    $scope.isLoosed = false;
 
 
     $scope.circles = [{
@@ -74,7 +76,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
         $scope.cpt = 3;
         intervalBeginGame = $interval(function() {
             $scope.cpt--;
-            if($scope.cpt === 0){
+            if ($scope.cpt === 0) {
                 $scope.start();
                 gameReady = true;
             }
@@ -103,7 +105,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
 
     $scope.onTap = function(item) {
 
-        if(!gameReady) return;
+        if (!gameReady) return;
 
         if (!item.activated) {
             $scope.loose();
@@ -132,14 +134,15 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
             return;
         }
 
-        if ($scope.points === 5 || $scope.points === 20 || 
-            $scope.points === 50 || $scope.points === 100 || 
-            $scope.points === 200|| $scope.points === 300 || 
-            $scope.points === 400|| $scope.points === 500 || 
-            $scope.points === 600|| $scope.points === 700 || 
-            $scope.points === 800|| $scope.points === 900 || 
-            $scope.points === 1000|| $scope.points === 1100 
-            ) {
+        if ($scope.points === 5 || $scope.points === 10 ||
+            $scope.points === 20 || $scope.points === 50 ||
+            $scope.points === 80 || $scope.points === 100 ||
+            $scope.points === 200 || $scope.points === 300 ||
+            $scope.points === 400 || $scope.points === 500 ||
+            $scope.points === 600 || $scope.points === 700 ||
+            $scope.points === 800 || $scope.points === 900 ||
+            $scope.points === 1000 || $scope.points === 1100
+        ) {
             $scope.stop();
             $scope.delay = $scope.delay - ($scope.delay * 0.2);
             console.log($scope.delay);
@@ -190,6 +193,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
 
     $scope.loose = function() {
         $scope.stop();
+        $scope.isLoosed = true;
         console.log("You loose :" + $scope.points);
     };
 

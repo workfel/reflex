@@ -1,4 +1,8 @@
 <div class="game">
+	
+	<div ng-show="isLoosed" class="Absolute-Center is-Fixed">
+			<div ng-show="restartShow" ng-click="again()" class="peter-river-flat-button">Recommencer</div>
+	</div>
 
 	<div class="cptBegin Absolute-Center is-Fixed" ng-hide="cpt == 0 ">
 		{{cpt}} 
