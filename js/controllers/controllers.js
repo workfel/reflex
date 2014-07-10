@@ -138,7 +138,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
             $scope.points === 400|| $scope.points === 500 || 
             $scope.points === 600|| $scope.points === 700 || 
             $scope.points === 800|| $scope.points === 900 || 
-            $scope.points === 1000|| $scope.points === 1100 || 
+            $scope.points === 1000|| $scope.points === 1100 
             ) {
             $scope.stop();
             $scope.delay = $scope.delay - ($scope.delay * 0.2);
