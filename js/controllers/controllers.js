@@ -13,6 +13,8 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
     $scope.points = 0;
 
     $scope.restartShow = true;
+    $scope.isModal = true;
+
 
     $scope.circles = [{
             id: 1,
@@ -65,17 +67,18 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
 
     var stopInterval;
     var intervalBeginGame;
-
+    var gameReady = false;
 
     $scope.beginGame = function() {
         if (angular.isDefined(intervalBeginGame)) return;
-        var cpt = 0;
+        $scope.cpt = 3;
         intervalBeginGame = $interval(function() {
-            cpt++;
-            if(cpt === 3){
-                
+            $scope.cpt--;
+            if($scope.cpt === 0){
+                $scope.start();
+                gameReady = true;
             }
-        }, $scope.delay, 3);
+        }, 1000, 3);
 
     };
 
@@ -89,7 +92,7 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
     };
 
 
-    $scope.start();
+    $scope.beginGame();
 
     $scope.stop = function() {
         if (angular.isDefined(stopInterval)) {
@@ -99,6 +102,8 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
     };
 
     $scope.onTap = function(item) {
+
+        if(!gameReady) return;
 
         if (!item.activated) {
             $scope.loose();
@@ -127,7 +132,14 @@ speedTouchCtrl.controller('GameCtrl', function($scope, $interval, $location, $ro
             return;
         }
 
-        if ($scope.points === 5 || $scope.points === 20 || $scope.points === 50 || $scope.points === 100 || $scope.points === 200) {
+        if ($scope.points === 5 || $scope.points === 20 || 
+            $scope.points === 50 || $scope.points === 100 || 
+            $scope.points === 200|| $scope.points === 300 || 
+            $scope.points === 400|| $scope.points === 500 || 
+            $scope.points === 600|| $scope.points === 700 || 
+            $scope.points === 800|| $scope.points === 900 || 
+            $scope.points === 1000|| $scope.points === 1100 || 
+            ) {
             $scope.stop();
             $scope.delay = $scope.delay - ($scope.delay * 0.2);
             console.log($scope.delay);

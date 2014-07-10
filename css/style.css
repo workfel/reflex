@@ -18,6 +18,32 @@
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 4px rgba(0, 0, 0, 0.8);
 }
 
+
+/* -------------------
+MODAL
+-------------------- */
+.cptBegin{
+  
+}
+
+.Absolute-Center {
+  width: 50%;
+  height: 25%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  font-size: 58px;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+
+}
+.Absolute-Center.is-Fixed {
+  position: fixed;
+  z-index: 999;
+}
+
 /* line 22, ../sass/screen.scss */
 
 .cool_btn1 {
